@@ -1,0 +1,9 @@
+# 102 MB of Arena preferences. scripts/fetch_data.py pulls it back (ungated).
+data/*.parquet
+data/*.part
+
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/

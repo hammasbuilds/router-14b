@@ -1,0 +1,24 @@
+[project]
+name = "router-14b"
+version = "0.1.0"
+description = "When is the weaker model enough? 57,477 human votes, and the length confound in all of them"
+requires-python = ">=3.11"
+dependencies = ["pyarrow>=14"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
