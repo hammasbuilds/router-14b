@@ -27,7 +27,7 @@ python scripts/measure.py      # every table below
 python -m pytest               # 18 tests
 ```
 
-## Finding 1 — a third of the time nobody can tell
+## Result 1 — a third of the time nobody can tell
 
 **30.9% of votes are ties.** Two different models answered, a person read both, and could
 not choose.
@@ -35,7 +35,7 @@ not choose.
 That is the share of traffic where routing is free. Any router that sends those to the
 cheaper model loses nothing anybody noticed.
 
-## Finding 2 — the weaker model is enough more than half the time
+## Result 2 — the weaker model is enough more than half the time
 
 Model strength is each model's win rate, fitted on the 51,729 training votes. "Enough" means
 the human either preferred the weaker model or could not tell them apart.
@@ -51,7 +51,7 @@ The gradient is the check. The further apart two models are by training win rate
 often the weaker one suffices. If that ran flat, the strength estimate would be sorting
 models into bands that correspond to nothing a human noticed.
 
-## Finding 3 — the longer answer wins, and length is not quality
+## Result 3 — the longer answer wins, and length is not quality
 
 | Split | Longer wins | n | Stronger model wins | n | They agree |
 |---|---:|---:|---:|---:|---:|
