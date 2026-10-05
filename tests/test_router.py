@@ -12,6 +12,9 @@ import pytest
 from router import corpus
 from router import predictors as P
 
+if not corpus.ARENA.exists():
+    pytest.skip("Arena corpus not fetched - run scripts/fetch_data.py", allow_module_level=True)
+
 TRAIN, VAL, TEST = corpus.splits()
 STRENGTH = P.Strength.fit(TRAIN)
 
@@ -79,8 +82,8 @@ def test_ties_are_excluded_from_accuracy():
 
 def test_predictors_abstain_rather_than_guess():
     vote = corpus.Vote("x", "y", corpus.A, 10, 100, 100)
-    assert P.longer(vote) is None                    # equal lengths
-    assert STRENGTH.predict(vote) is None            # unknown models
+    assert P.longer(vote) is None  # equal lengths
+    assert STRENGTH.predict(vote) is None  # unknown models
 
 
 def test_longer_answer_beats_a_coin_flip():

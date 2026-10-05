@@ -42,9 +42,7 @@ EXPECT_ROWS = 57_477
 
 
 def expected_size(url: str) -> int:
-    request = urllib.request.Request(
-        url, method="HEAD", headers={"User-Agent": "router-14b"}
-    )
+    request = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "router-14b"})
     with urllib.request.urlopen(request, timeout=120) as response:
         return int(response.headers["Content-Length"])
 
@@ -68,10 +66,9 @@ def fetch() -> None:
     partial = OUT.with_suffix(".parquet.part")
     written = partial.stat().st_size if partial.exists() else 0
     if written >= total:
-        written = 0                       # a .part longer than the file is junk
+        written = 0  # a .part longer than the file is junk
     if written:
-        print(f"  resuming at {written / 1e6:.0f} MB of {total / 1e6:.0f} MB ",
-              end="", flush=True)
+        print(f"  resuming at {written / 1e6:.0f} MB of {total / 1e6:.0f} MB ", end="", flush=True)
     else:
         print(f"  {OUT.name}  {total / 1e6:.0f} MB ", end="", flush=True)
 

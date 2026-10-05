@@ -64,8 +64,10 @@ def the_length_finding() -> None:
     train, val, test = corpus.splits()
     strength = P.Strength.fit(train)
 
-    print(f"{'split':<8}{'longer wins':>14}{'n':>9}"
-          f"{'stronger model wins':>22}{'n':>9}{'they agree':>13}")
+    print(
+        f"{'split':<8}{'longer wins':>14}{'n':>9}"
+        f"{'stronger model wins':>22}{'n':>9}{'they agree':>13}"
+    )
     for name, split in (("train", train), ("val", val), ("test", test)):
         la, na = P.accuracy(split, P.longer)
         sa, ns = P.accuracy(split, strength.predict)

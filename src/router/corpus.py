@@ -94,8 +94,14 @@ def load() -> tuple[Vote, ...]:
     table = pq.read_table(
         ARENA,
         columns=[
-            "model_a", "model_b", "prompt", "response_a", "response_b",
-            "winner_model_a", "winner_model_b", "winner_tie",
+            "model_a",
+            "model_b",
+            "prompt",
+            "response_a",
+            "response_b",
+            "winner_model_a",
+            "winner_model_b",
+            "winner_tie",
         ],
     )
     d = table.to_pydict()
