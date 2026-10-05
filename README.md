@@ -116,3 +116,7 @@ src/router/predictors.py    strength (fitted on train), length, agreement
 scripts/measure.py          every table above
 tests/                      18 tests, incl. the train-only fit
 ```
+
+## Licence
+
+MIT, see [LICENSE](LICENSE).
